@@ -1,4 +1,4 @@
-package tuanbuffet.getlistnameteacher;
+package tuanbuffet.listnameteacher;
 
 public class ListTeacherName {
     public String[] teacherPhilippines = {
@@ -20,7 +20,7 @@ public class ListTeacherName {
             "Yamamoto","Macy","Sai","Arya","Jhoanna","Ram 2","Mahry","Gerard","Bert","Genmar","Christine 2","Pong","Lou","Fegie","Venia","Tinker Trish","Jo Ann","Ally","Mavis","Ryl 2","Ray 1","Rich","Flora","Doris","Tines",
             "Mally","Anavy","Rose 2","Jen 3","Melanie 2","Jill","Rizzel","Ellasara","Everleigh","Hauser","Kate 2","Neski","Shawntel","Blossom","Kirby","Christien Joy","Yhanie"
     };
-    public String teacherVietNam[] = {"Phương Quỳnh 2","Minh Hằng 4","Anh Tuấn 2","Đức Thịnh","Ngọc Nguyên 2","Nguyên Thủy","Huệ Thanh","Hải Yến 9","Khánh Linh 17","Thu Sương","Tiến Dũng","Khả Mân","Mỹ Kha","Hồng Lam","Nguyễn Hương 3","Thiên Trang","Minh Phúc","Kiều Vân","Thanh Lan","Mai Anh 2","Như Thi","Thanh Khuê","Tuyết Ngọc","Phương Nga 4","Đông Dương",
+    public String[] teacherVietNam = {"Phương Quỳnh 2","Minh Hằng 4","Anh Tuấn 2","Đức Thịnh","Ngọc Nguyên 2","Nguyên Thủy","Huệ Thanh","Hải Yến 9","Khánh Linh 17","Thu Sương","Tiến Dũng","Khả Mân","Mỹ Kha","Hồng Lam","Nguyễn Hương 3","Thiên Trang","Minh Phúc","Kiều Vân","Thanh Lan","Mai Anh 2","Như Thi","Thanh Khuê","Tuyết Ngọc","Phương Nga 4","Đông Dương",
             "Triệu My","Thùy Dung 4","Trúc Quỳnh 3","Bình Dương","Thiên Kim","Anh Thư 9","Tâm Tuyền","Mỹ Duyên 7","Minh Khanh","Khánh Ngọc 3","Thanh Vy 3","Quỳnh Anh 6","An Chinh","Hàn Viên","Kim Loan","Lê Anh","Lưu Hoài","Thanh Tú","Hằng Nga 2","Nguyễn Thu 2","Nhật Vy","Lê Trâm 2","Anh Thy 2","Uyên Phương","Đăng Khoa 3",
             "Thu Hà 3","Thu Huyền 4","Thảo Nguyên 3","Minh Thanh 2","Út Thương","Quang Duy 2","Thu Huyền 3","Yến Nhi 8","Ngọc Trinh","Trọng Nghĩa 3","Huỳnh Ngân","Minh Thư 3","Hoàng Hiền","Song Phương","Hải Yến 8","Tú Hảo","Linh Kha","Minh Nhật 2","Triệu Vi","Gia Vi","Thành Hiệp","Như Quỳnh 14","Khả Nhi","Thanh Huyên 3","An Khánh",
             "Kim Tuyến","Ái Như","Hương Quỳnh 2","Võ Nghiệp","Trúc Mai 2","Tuấn Anh","Thanh Thúy 4","Ngọc Diệp","Diễm Châu","Thành Đạt 2","Anh Thư 8","Kiều Yên","Tùng Anh","Linh Chi 4","Nguyễn Hồ","Ngọc Thảo 2","Ánh Tuyết","Như Quỳnh 12","Khánh Hà","Thanh Hương 2","Minh Anh 8","Thanh Tuyền 6","Hoàng Lan 2","Thúy Vy 6","Thanh Trúc 5",
@@ -37,10 +37,10 @@ public class ListTeacherName {
             "Lê Nhung","Như Quỳnh 5","Thảo Nguyên","Chu Hồng","Cẩm Trúc","Cẩm Duyên","Nguyễn Hương 2","Kim Ánh 2","Kim Mai","Chi Mai","Vân Anh 4","Đoan Trang","Hoài Phương","Bảo Trâm 2","Tấn Tiền","Ngọc Hiền","Thúy An","Ngọc Hân 3","Bảo Ngọc 4","Phương Huyền","Trần Phương","Vân Anh","Kim Nguyên","Hoài Thương 3","Hoài Thương",
             "Yên Hà","Thu Thủy 3","Ngọc Hồng","Thúy Qua","Thục Đoan","Thanh Giang","Thùy Trang 5","Bảo Châu 2","Trà My 3","Mai Phương 2","Quỳnh Nhi","Bá Quận","Thúy Nga 2",
             };
-    public String teacherNamPhi[] = {
+    public String[] teacherNamPhi = {
             "Bron","Kim 4","Jo Mari","Sharon 2","Terry","Cerilea","Jordan","Monique 2","Joe 3","Natasha","Blake","Rachel","Liz 1","Morne","Toni","Minette","Deon","Nicole 3","Ari"
     };
-    public String TeacherUSUK[] = {
+    public String[] TeacherUSUK = {
             "Nicci","Christian","Tom","Victoria","Carol 2","Angel 2",
     };
 

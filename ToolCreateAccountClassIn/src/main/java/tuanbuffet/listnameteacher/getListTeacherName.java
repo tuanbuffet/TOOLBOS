@@ -1,10 +1,10 @@
-package tuanbuffet.getlistnameteacher;
+package tuanbuffet.listnameteacher;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import tuanbuffet.common.WebUI;
 
-public class ListNameTeacher extends WebUI {
+public class getListTeacherName extends WebUI {
      String URL = "https://spu.bos.hocmai.com/teachers";
     By selectProductInput = By.xpath("//input[@placeholder=\"Chọn Sản Phẩm\"]");
     By searchTeacherButton = By.xpath("//button[text()='Tìm Kiếm']");

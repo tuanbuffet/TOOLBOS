@@ -1,6 +1,6 @@
 package tuanbuffet.createclass.generalInformation;
 
-import tuanbuffet.getlistnameteacher.ListTeacherName;
+import tuanbuffet.listnameteacher.ListTeacherName;
 
 public class ProductName extends ListTeacherName {
     private String classType;

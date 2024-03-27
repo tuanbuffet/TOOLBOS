@@ -2,7 +2,7 @@ package tuanbuffet;
 
 import tuanbuffet.common.Login;
 import tuanbuffet.createclass.RunCreateNewClass;
-import tuanbuffet.getlistnameteacher.ListNameTeacher;
+import tuanbuffet.listnameteacher.getListTeacherName;
 
 public class Main {
     static String[][] information = {
@@ -13,7 +13,7 @@ public class Main {
             {"Nguyễn Thành Long 15","phunglien25071988@gmail.com","968732318","SPU 1:1","Thứ ba: 19:10-19:40Thứ sáu: 19:10-19:40","Thành Đạt 3","Chat room for teens 1","ST111493"},*/
     };
     static RunCreateNewClass runCreateNewClass = new RunCreateNewClass(information);
-    static ListNameTeacher listNameTeacher = new ListNameTeacher();
+    static getListTeacherName listNameTeacher = new getListTeacherName();
     public static void main(String[] args) throws InterruptedException{
         Login login = new Login();
         login.Login("ctvanhnt2","anhnt216836");
