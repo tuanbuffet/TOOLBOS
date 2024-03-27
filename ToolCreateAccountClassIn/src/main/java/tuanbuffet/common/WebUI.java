@@ -310,8 +310,12 @@ public class WebUI {
 
     public static void setText(By by, String value) {
         waitForElementVisible(by);
+        getWebElement(by).clear();
         getWebElement(by).sendKeys(value);
         logConsole("Set text " + value + " on element " + by);
+    }
+    public static void refreshPageWeb(){
+        driver.navigate().refresh();
     }
 
     public static String getTextElement(By by) {
