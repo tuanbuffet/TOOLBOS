@@ -49,7 +49,7 @@ public class PickStudentPage extends WebUI {
         Thread.sleep(1000);
         clickElement(searchButton);
         Thread.sleep(3000);
-        if (verifyElementVisible(addStudentButton,5)){
+        if (verifyElementIsDisplay(addStudentButton,5)){
             clickElement(addStudentButton);
             System.out.println("done add " + idBos + " vào lớp! |");
         }

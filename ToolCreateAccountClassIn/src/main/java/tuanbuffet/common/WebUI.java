@@ -35,6 +35,20 @@ public class WebUI {
         robot.keyRelease(KeyEvent.VK_T);
         Thread.sleep(1000);
     }
+
+    public static boolean veryElementIsDisplay(By by, int timeOut){
+        boolean status = false;
+        for (int i = 0; i<=timeOut; i++){
+            if (driver.findElement(by).isDisplayed()){
+                status = true;
+                break;
+            }
+            else {
+                sleep(1);
+            }
+        }
+        return status;
+    }
     public static String Unsigned(String str){
         switch (str){
             case "đ":
@@ -62,41 +76,6 @@ public class WebUI {
         temp = pattern.matcher(temp).replaceAll("");
         return temp.replaceAll("đ", "d");
     }
-    public static String convertUser(String name) {
-
-        String[] words = name.split("\\s");
-        if (isNumer(words[words.length - 1])) {
-            String firstusername = removeAccent(words[words.length - 2]).toLowerCase();
-            /*System.out.print(removeAccent(words[words.length - 2]).toLowerCase());*/
-
-            for (int j = 0; j < words.length - 2; j++) {
-                /*System.out.println(removeAccent(String.valueOf(words[j].charAt(0))).toLowerCase());*/
-                firstusername = firstusername + removeAccent(Unsigned(String.valueOf(words[j].charAt(0))).toLowerCase());
-            }
-            /*System.out.println(words[words.length - 1] + "2023");*/
-            firstusername = firstusername +words[words.length - 1] ;
-            return firstusername;
-        } else {
-            String firstusername = removeAccent(words[words.length - 1]).toLowerCase();
-            /*System.out.print(removeAccent(words[words.length - 1]).toLowerCase());*/
-            for (int j = 0; j < words.length - 1; j++) {
-                /*System.out.print(removeAccent(words[j].toLowerCase()));*/
-                firstusername = firstusername + removeAccent(Unsigned(String.valueOf(words[j].charAt(0))).toLowerCase());
-            }
-            /*System.out.println("2023");*/
-            return firstusername;
-        }
-    }
-    public static void waitElemenetDisplay(By by, int timeWait) throws InterruptedException {
-        for (int i =0; i<= timeWait; i++){
-            if (driver.findElement(by).isDisplayed()){
-                break;
-            }
-            else {
-                Thread.sleep(1000);
-            }
-        }
-    }
     public static WebDriver driver;
     public static void HideBrowers(){
         ChromeOptions options = new ChromeOptions();
@@ -108,74 +87,74 @@ public class WebUI {
         driver.findElement(by).click();
     }
     public static void clickSomeElemnent(By element1, By element2, By element3){
-        if (verifyElementVisible(element1,1)){
+        if (verifyElementIsDisplay(element1,1)){
             clickElement(element1);
         }
-        else if (verifyElementVisible(element2,1)){
+        else if (verifyElementIsDisplay(element2,1)){
             clickElement(element2);
         }else clickElement(element3);
     }
     public static void clickSomeElemnent(By element1, By element2, By element3,String content){
-        if (verifyElementVisible(element1,1)){
+        if (verifyElementIsDisplay(element1,1)){
             if (getTextElement(element1).contains(content)){
                 clickElement(element1);
             }
         }
-        if (verifyElementVisible(element2,1)){
+        if (verifyElementIsDisplay(element2,1)){
             if (getTextElement(element2).contains(content)){
                 clickElement(element2);
             }
         }
-        if (verifyElementVisible(element3,1)){
+        if (verifyElementIsDisplay(element3,1)){
             if (getTextElement(element3).contains(content)){
                 clickElement(element3);
             }
         }
     }
     public static void clickSomeElemnent(By element1, By element2, By element3,By element4, String content){
-        if (verifyElementVisible(element1,1)){
+        if (verifyElementIsDisplay(element1,1)){
             if (getTextElement(element1).contains(content)){
                 clickElement(element1);
             }
         }
-        if (verifyElementVisible(element2,1)){
+        if (verifyElementIsDisplay(element2,1)){
             if (getTextElement(element2).contains(content)){
                 clickElement(element2);
             }
         }
-        if (verifyElementVisible(element3,1)){
+        if (verifyElementIsDisplay(element3,1)){
             if (getTextElement(element3).contains(content)){
                 clickElement(element3);
             }
         }
-        if (verifyElementVisible(element4,1)){
+        if (verifyElementIsDisplay(element4,1)){
             if (getTextElement(element4).contains(content)){
                 clickElement(element4);
             }
         }
     }
     public static void clickSomeElemnent(By element1, By element2, By element3,By element4,By element5, String content){
-        if (verifyElementVisible(element1,1)){
+        if (verifyElementIsDisplay(element1,1)){
             if (getTextElement(element1).contains(content)){
                 clickElement(element1);
             }
         }
-        if (verifyElementVisible(element2,1)){
+        if (verifyElementIsDisplay(element2,1)){
             if (getTextElement(element2).contains(content)){
                 clickElement(element2);
             }
         }
-        if (verifyElementVisible(element3,1)){
+        if (verifyElementIsDisplay(element3,1)){
             if (getTextElement(element3).contains(content)){
                 clickElement(element3);
             }
         }
-        if (verifyElementVisible(element4,1)){
+        if (verifyElementIsDisplay(element4,1)){
             if (getTextElement(element4).contains(content)){
                 clickElement(element4);
             }
         }
-        if (verifyElementVisible(element5,1)){
+        if (verifyElementIsDisplay(element5,1)){
             if (getTextElement(element5).contains(content)){
                 clickElement(element5);
             }
@@ -186,52 +165,52 @@ public class WebUI {
         clickElement(locator);
     }
     public static void clickSomeElemnent(By element1, By element2, By element3,By element4,By element5,By element6, String content){
-        if (verifyElementVisible(element1,1)){
+        if (verifyElementIsDisplay(element1,1)){
             if (getTextElement(element1).contains(content)){
                 clickElement(element1);
             }
         }
-        if (verifyElementVisible(element2,1)){
+        if (verifyElementIsDisplay(element2,1)){
             if (getTextElement(element2).contains(content)){
                 clickElement(element2);
             }
         }
-        if (verifyElementVisible(element3,1)){
+        if (verifyElementIsDisplay(element3,1)){
             if (getTextElement(element3).contains(content)){
                 clickElement(element3);
             }
         }
-        if (verifyElementVisible(element4,1)){
+        if (verifyElementIsDisplay(element4,1)){
             if (getTextElement(element4).contains(content)){
                 clickElement(element4);
             }
         }
-        if (verifyElementVisible(element5,1)){
+        if (verifyElementIsDisplay(element5,1)){
             if (getTextElement(element5).contains(content)){
                 clickElement(element5);
             }
         }
-        if (verifyElementVisible(element6,1)){
+        if (verifyElementIsDisplay(element6,1)){
             if (getTextElement(element6).contains(content)){
                 clickElement(element6);
             }
         }
     }
     public static void clickSomeElemnent(By element1, By element2){
-        if (verifyElementVisible(element1,1)){
+        if (verifyElementIsDisplay(element1,1)){
                 clickElement(element1);
         }
-        if (verifyElementVisible(element2,1)){
+        if (verifyElementIsDisplay(element2,1)){
                 clickElement(element2);
         }
     }
     public static void clickSomeElemnent(By element1, By element2, String content){
-        if (verifyElementVisible(element1,1)){
+        if (verifyElementIsDisplay(element1,1)){
             if (getTextElement(element1).contains(content)){
                 clickElement(element1);
             }
         }
-        if (verifyElementVisible(element2,1)){
+        if (verifyElementIsDisplay(element2,1)){
             if (getTextElement(element2).contains(content)){
                 clickElement(element2);
             }
@@ -362,7 +341,6 @@ public class WebUI {
     }
     public static void waitForElementVisible(By by, int second) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(second), Duration.ofMillis(500));
-
         wait.until(ExpectedConditions.visibilityOfElementLocated(by));
     }
 
@@ -387,7 +365,7 @@ public class WebUI {
         wait.until(ExpectedConditions.elementToBeClickable(by));
     }
 
-    public static boolean verifyElementVisible(By by, int second) {
+    public static boolean verifyElementIsDisplay(By by, int second) {
         try {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(second), Duration.ofMillis(500));
             wait.until(ExpectedConditions.visibilityOfElementLocated(by));
@@ -396,16 +374,6 @@ public class WebUI {
             return false;
         }
     }
-    public static boolean verifyElementNotVisible(By by, int second) {
-        try {
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(second), Duration.ofMillis(500));
-            wait.until(ExpectedConditions.invisibilityOfElementLocated(by));
-            return true;
-        } catch (TimeoutException e) {
-            return false;
-        }
-    }
-
     public static int listElements(By by) {
         List<WebElement> listElement = driver.findElements(by);
         return listElement.size();
@@ -414,7 +382,7 @@ public class WebUI {
     public static Boolean checkElementExist(String xpath) {
         List<WebElement> listElement = driver.findElements(By.xpath(xpath));
 
-        if (listElement.size() > 0) {
+        if (!listElement.isEmpty()) {
             System.out.println("Element " + xpath + " existing.");
             return true;
         } else {

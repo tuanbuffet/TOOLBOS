@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite" verbose="1">
+    <test name="FirstTest">
+        <packages>
+            <package name="tuanbuffet.common"/>
+        </packages>
+        <classes>
+            <class name="tuanbuffet.common.Login" />
+        </classes>
+
+    </test>
+</suite>

@@ -3,27 +3,26 @@ package tuanbuffet.createclass.generalInformation;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import tuanbuffet.common.WebUI;
+
+import java.util.Objects;
+
 public class GeneralInformation extends WebUI{
-    ProductName productName = new ProductName(getClassType1(),getTeacherName1());
-    NumberOfStudent numberOfStudent = new NumberOfStudent();
-    ClassType classtype = new ClassType();
-    CustomerService customerService = new CustomerService();
-    private final By selectProductInput = By.xpath("//input[@placeholder=\"Chọn Sản Phẩm\"]");
-    private final By nameClassInput = By.xpath("//input[@placeholder=\"Nhập Tên Lớp\"]");
-    private final By numberStudentInput = By.xpath("//input[@placeholder=\"Chọn Số Lượng Tối Đa Học Viên\"]");
-    private final By typeClassInput = By.xpath("//input[@placeholder=\"Chọn Loại Lớp\"]");
-    private final By CSKHInput = By.xpath("//input[@placeholder=\"Chọn CKSH\"]");
-    private final By submitButton = By.xpath("//button[contains(text(),'Tiếp Tục')]");
-    private String studentName1;
-    private String classType1;
-    private String teacherName1;
-    private String schedule1;
-    private String curriculum1;
-    private String studentName2;
-    private String classType2;
-    private String teacherName2;
-    private String schedule2;
-    private String curriculum2;
+    private  String studentName1;
+    private  String classType1;
+    private  String teacherName1;
+    private  String schedule1;
+    private  String curriculum1;
+    private  String studentName2;
+    private  String classType2;
+    private  String teacherName2;
+    private  String schedule2;
+    private  String curriculum2;
+    private  By selectProductInput = By.xpath("//input[@placeholder=\"Chọn Sản Phẩm\"]");
+    private  By nameClassInput = By.xpath("//input[@placeholder=\"Nhập Tên Lớp\"]");
+    private  By numberStudentInput = By.xpath("//input[@placeholder=\"Chọn Số Lượng Tối Đa Học Viên\"]");
+    private  By typeClassInput = By.xpath("//input[@placeholder=\"Chọn Loại Lớp\"]");
+    private  By CSKHInput = By.xpath("//input[@placeholder=\"Chọn CKSH\"]");
+    private  By submitButton = By.xpath("//button[contains(text(),'Tiếp Tục')]");
 
     public void setStudentName1(String studentName1) {
         this.studentName1 = studentName1;
@@ -65,7 +64,7 @@ public class GeneralInformation extends WebUI{
         this.curriculum2 = curriculum2;
     }
 
-    public String getStudentName1() {
+    private final String getStudentName1() {
         return studentName1;
     }
 
@@ -104,6 +103,7 @@ public class GeneralInformation extends WebUI{
     public String getCurriculum2() {
         return curriculum2;
     }
+    ProductName productName = new ProductName(getClassType1(),getTeacherName1());
 
     public GeneralInformation(String studentName1, String classType1, String teacherName1, String schedule1, String curriculum1, String studentName2, String classType2, String teacherName2, String schedule2, String curriculum2) {
         this.studentName1 = studentName1;
@@ -117,27 +117,36 @@ public class GeneralInformation extends WebUI{
         this.schedule2 = schedule2;
         this.curriculum2 = curriculum2;
     }
-
     public boolean addGeneralInformation() throws InterruptedException {
-        ClassName className = new ClassName(getStudentName1(), getClassType1(), getTeacherName1(), getSchedule1(), getCurriculum1(), getStudentName2(), getClassType2(), getTeacherName2(), getSchedule2(), getCurriculum2());
-        if (className.getClassName().isEmpty()){
+        if (getClassName().isEmpty()){
             return false;
         }
         else {
-            System.out.println(className.getClassName() + "|" + getClassType1() + "|" + getTeacherName1() + "|" + getSchedule1() + "|");
+            System.out.println(getClassName() + "|" + getClassType1() + "|" + getTeacherName1() + "|" + getSchedule1() + "|");
             setText(selectProductInput, productName.getProductCourseName() + Keys.DOWN + Keys.ENTER);
             Thread.sleep(1000);
-            setText(nameClassInput,className.getClassName());
+            setText(nameClassInput,getClassName());
             Thread.sleep(500);
-            setText(numberStudentInput,numberOfStudent.getNumberOfStudent());
+            setText(numberStudentInput,"5");
             Thread.sleep(500);
-            setText(typeClassInput, classtype.getClassType()+ Keys.DOWN + Keys.ENTER);
+            setText(typeClassInput, "Chính Thức"+ Keys.DOWN + Keys.ENTER);
             Thread.sleep(500);
-            setText(CSKHInput,customerService.getCustomerService() + Keys.DOWN + Keys.ENTER );
+            setText(CSKHInput,"(cs) - ( CS Default )" + Keys.DOWN + Keys.ENTER );
             Thread.sleep(500);
             clickElement(submitButton);
             Thread.sleep(2000);
             return true;
+        }
+    }
+    public String getClassName(){
+        if (classType1.contains("1:2")){
+            if (Objects.equals(getClassType1(),getClassType2()) && Objects.equals(getTeacherName1(),getTeacherName2()) && Objects.equals(getSchedule1(),getSchedule2()) && Objects.equals(getCurriculum1(),getCurriculum2())){
+                return getStudentName1() + " + " + getStudentName2();
+            }
+            else return "";
+        }
+        else {
+            return getStudentName1();
         }
     }
 }
